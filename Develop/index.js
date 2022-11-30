@@ -81,7 +81,7 @@ function init() {
     inquirer.prompt(questions).then(function(answers)
     {
       const mD = generateMarkdown(answers);
-        fs.writeFile(README.md, mD, (err) => {
+        fs.appendFile("README.md", mD, (err) => {
             if (err) {
                 return console.log(err);
             }
